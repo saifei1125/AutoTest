@@ -1,0 +1,140 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="接口业务用例" verbose="1"  parallel="false">
+    <parameter name="username" value="saifeiFZ"></parameter>
+    <parameter name="password" value="Abc123123"></parameter>
+    <test name="冒烟用例">
+        <classes>
+            <class name="com.taxchina.autotest.crmnew.service.testcase.SmokeCaseTest">
+                <methods>
+                    <include name ="smokeCase"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="登录用例">
+        <classes>
+            <class name="com.taxchina.autotest.crmnew.service.testcase.LoginCaseTest">
+                <methods>
+                    <include name ="loginCase"/>
+                    <include name ="loginCase1"/>
+                    <include name ="loginCase2"/>
+                    <include name ="loginCase3"/>
+                    <!--<include name ="loginCase4"/>-->
+                    <include name ="appLoginCase1"/>
+                    <include name ="appLoginCase2"/>
+                    <include name ="appLoginCase3"/>
+                    <include name ="appLoginCase4"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="客户用例">
+        <classes>
+            <class name="com.taxchina.autotest.crmnew.service.testcase.AddCustCaseTest">
+                <methods>
+                    <include name ="addPersonalCustCase1"/>
+                    <include name ="addPersonalCustCase2"/>
+                    <include name ="checkCustNameUnique1"/>
+                    <include name ="checkCustNameUnique2"/>
+                    <include name ="checkCustNameUnique3"/>
+                    <include name ="checkCustNameUnique4"/>
+                    <include name ="checkCustNameUnique5"/>
+                    <include name ="checkCustNameUnique6"/>
+                    <include name ="checkCustNameUnique7"/>
+                    <include name="addCustByLikeSearchCustName"/>
+                    <include name="addCustByLikeSearchCustName1"/>
+                    <include name="addCustByLikeSearchCustName2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="联系人用例">
+        <classes>
+            <class name="com.taxchina.autotest.crmnew.service.testcase.AddLinkmanCaseTest">
+                <methods>
+                    <include name ="addLinkmanCase1"/>
+                    <include name ="addLinkmanCase2"/>
+                    <include name ="addLinkmanCase3"/>
+                    <include name ="addLinkmanCase4"/>
+                    <include name ="addLinkmanCase5"/>
+                    <include name ="addLinkmanCase6"/>
+                    <include name ="addLinkmanCase7"/>
+                    <include name ="addLinkmanCase8"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="签合同用例">
+        <classes>
+            <class name="com.taxchina.autotest.crmnew.service.testcase.SignContractCaseTest">
+                <methods>
+                    <include name ="signContractCase1"/>
+                    <include name ="signContractCase2"/>
+                    <include name ="signContractCase3"/>
+                    <include name ="signContractCase4"/>
+                    <include name ="signContractCase5"/>
+                    <include name ="signContractCase6"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="录回款用例">
+        <classes>
+            <class name="com.taxchina.autotest.crmnew.service.testcase.AddFinanceCaseTest">
+                <methods>
+                    <include name ="addFinanceCase1"/>
+                    <include name ="addFinanceCase2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="录发票用例">
+        <classes>
+            <class name="com.taxchina.autotest.crmnew.service.testcase.AddInvoiceCaseTest">
+                <methods>
+                    <include name ="addInvoiceCase1"/>
+                    <include name ="addInvoiceCase2"/>
+                    <include name ="addInvoiceCase3"/>
+                    <include name ="addInvoiceCase4"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="约课用例">
+        <classes>
+            <class name="com.taxchina.autotest.crmnew.service.testcase.AppointmentCoursesCaseTest">
+                <methods>
+                    <include name ="appointmentCoursesCase1"/>
+                    <include name ="appointmentCoursesCase2"/>
+                    <include name ="appointmentCoursesCase3"/>
+                    <include name ="appointmentCoursesCase4"/>
+                    <include name ="appointmentCoursesCase5"/>
+                    <include name ="appointmentCoursesCase6"/>
+                    <include name ="appointmentCoursesCase7"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <!--<test name="app签到用例">-->
+        <!--<classes>-->
+            <!--<class name="com.taxchina.autotest.crmnew.service.testcase.AppCaseTest">-->
+                <!--<methods>-->
+                    <!--<include name="appTestCase"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+
+
+
+
+
+
+    <listeners>
+        <listener class-name="com.taxchina.autotest.crmnew.service.utils.ExtentTestNGIReporterListener" />
+    </listeners>
+
+</suite>

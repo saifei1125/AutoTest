@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taxchina.autotest.crmnew.dao.mapper.SignContractCaseMapper">
+
+
+    <insert id="setSignContractCase" parameterType="com.taxchina.autotest.crmnew.dao.entity.SignContractCase">
+
+        <selectKey  keyProperty="caseId" order="AFTER" resultType="java.lang.Integer">
+            select last_insert_id()
+        </selectKey>
+
+        INSERT INTO signcontract_case (customer_id,customer_name,sign_time,suite_id,suite_name,suite_desc,suite_amount,suite_type,cont_temp_id,lkm_id,lkm_name,lkm_tel,reduce_amount,original_amount,actual_amount,start_time,end_time,actual_start_time,actual_end_time)
+        VALUES (#{custId},#{custName},#{signTime},#{suiteId},#{suiteName},#{suiteDesc},#{suiteAmount},#{suiteType},#{templateId},#{lkmId},#{lkmName},#{lkmTel},#{reduceAmount},#{originalAmount},#{actualAmount},#{startTime},#{endTime},#{actualStartTime},#{actualEndTime})
+
+    </insert>
+
+    <insert id="setSuiteProduct" parameterType="java.util.List">
+        INSERT INTO  suite_product (suite_id,suite_name,product_id,product_name,product_unit,product_sale_price,product_type,suite_prod_num)
+        select #{suiteId},#{suiteName},#{productId},#{productName},#{productUnit},#{productPrice},#{productType},#{suiteProdNum}
+        from DUAL WHERE not EXISTS (select * from suite_product where suite_id = #{suiteId} and product_id = #{productId})
+    </insert>
+
+    <resultMap id="SignContractCaseMap" type="com.taxchina.autotest.crmnew.dao.entity.SignContractCase">
+        <id property="caseId" column="signcontract_case_id"></id>
+        <id property="custId" column="customer_id"></id>
+        <id property="custName" column="customer_name"></id>
+        <id property="signTime" column="sign_time"></id>
+        <id property="suiteId" column="suite_id"></id>
+        <id property="suiteName" column="suite_name"></id>
+        <id property="suiteDesc" column="suite_desc"></id>
+        <id property="suiteAmount" column="suite_amount"></id>
+        <id property="suiteType" column="suite_type"></id>
+        <id property="templateId" column="cont_temp_id"></id>
+        <id property="lkmId" column="lkm_id"></id>
+        <id property="lkmName" column="lkm_name"></id>
+        <id property="lkmTel" column="lkm_tel"></id>
+        <id property="reduceAmount" column="reduce_amount"></id>
+        <id property="originalAmount" column="original_amount"></id>
+        <id property="actualAmount" column="actual_amount"></id>
+        <id property="startTime" column="start_time"></id>
+        <id property="endTime" column="end_time"></id>
+        <id property="actualStartTime" column="actual_start_time"></id>
+        <id property="actualEndTime" column="actual_end_time"></id>
+    </resultMap>
+    <!-- 查询用例 -->
+    <select id="getSignContractCaseById" resultMap="SignContractCaseMap" parameterType="int">
+        SELECT * FROM signcontract_case WHERE signcontract_case_id = #{id}
+    </select>
+
+
+    <resultMap id="SuiteProductInfoMap" type="com.taxchina.autotest.crmnew.service.entity.Product">
+        <id property="caseId" column="suite_prod_id"></id>
+        <id property="suiteId" column="suite_id"></id>
+        <id property="prodId" column="product_id"></id>
+        <id property="prodName" column="product_name"></id>
+        <id property="prodUnit" column="product_unit"></id>
+        <id property="prodSalePrice" column="product_sale_price"></id>
+        <id property="prodType" column="product_type"></id>
+        <id property="suitProdNum" column="suite_prod_num"></id>
+    </resultMap>
+    <!-- 查询用例 -->
+    <select id="getSuiteProductInfo" resultMap="SuiteProductInfoMap" parameterType="java.lang.String">
+        SELECT * FROM suite_product WHERE suite_id = #{id}
+    </select>
+
+</mapper>

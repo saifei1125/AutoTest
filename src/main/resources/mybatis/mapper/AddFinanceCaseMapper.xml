@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taxchina.autotest.crmnew.dao.mapper.AddFinanceCaseMapper">
+
+    <insert id="setAddFinanceCase" parameterType="com.taxchina.autotest.crmnew.dao.entity.AddFinanceCase">
+
+        <selectKey  keyProperty="caseId" order="AFTER" resultType="java.lang.Integer">
+            select last_insert_id()
+        </selectKey>
+
+        INSERT INTO addfinance_case (collection_no,collection_date,amount,contract_label,gathering_finance,
+        gathering_type,payment_name,notice_flag,business_user_name,business_user_id,cust_type,
+        business_company_name,invoice_no,invoice_flag,invoice_date,suitet_type,remark,addfinance_expect)
+        VALUES (#{collectionNo},#{collectionDate},#{amount},#{contractLabel},#{gatheringFinance},
+        #{gatheringType},#{paymentName},#{noticeFlag},#{businessUserName},#{businessUserId},#{custType},
+        #{businessCompanyName},#{invoiceNo},#{invoiceFlag},#{invoiceDate},#{suitetType},#{remark},#{addfinanceExpect})
+
+    </insert>
+
+    <resultMap id="AddFinanceCaseMap" type="com.taxchina.autotest.crmnew.dao.entity.AddFinanceCase">
+        <id property="caseId" column="addfinance_case_id" javaType="int" jdbcType="INTEGER"></id>
+        <id property="collectionNo" column="collection_no" javaType="string" jdbcType="VARCHAR"></id>
+        <id property="collectionDate" column="collection_date" javaType="string" jdbcType="VARCHAR"></id>
+        <id property="amount" column="amount" javaType="string" jdbcType="VARCHAR"></id>
+        <id property="contractLabel" column="contract_label" javaType="int" jdbcType="INTEGER"></id>
+        <id property="gatheringFinance" column="gathering_finance" javaType="string" jdbcType="VARCHAR"></id>
+        <id property="gatheringType" column="gathering_type" javaType="int" jdbcType="INTEGER"></id>
+        <id property="paymentName" column="payment_name" javaType="string" jdbcType="VARCHAR"></id>
+        <id property="noticeFlag" column="notice_flag" javaType="string" jdbcType="VARCHAR"></id>
+        <id property="businessUserName" column="business_user_name" javaType="string" jdbcType="VARCHAR"></id>
+        <id property="businessUserId" column="business_user_id" javaType="string" jdbcType="BIGINT"></id>
+        <id property="custType" column="cust_type" javaType="int" jdbcType="INTEGER"></id>
+        <id property="businessCompanyName" column="business_company_name" javaType="string" jdbcType="VARCHAR"></id>
+        <id property="invoiceNo" column="invoice_no" javaType="string" jdbcType="VARCHAR"></id>
+        <id property="invoiceFlag" column="invoice_flag" javaType="int" jdbcType="INTEGER"></id>
+        <id property="invoiceDate" column="invoice_date" javaType="string" jdbcType="VARCHAR"></id>
+        <id property="suitetType" column="suitet_type" javaType="string" jdbcType="VARCHAR"></id>
+        <id property="remark" column="remark" javaType="string" jdbcType="CLOB"></id>
+        <id property="addfinanceExpect" column="addfinance_expect" javaType="string" jdbcType="VARCHAR"></id>
+
+    </resultMap>
+    <!-- 查询用例 -->
+    <select id="getAddFinanceCaseById" resultMap="AddFinanceCaseMap" parameterType="int">
+        SELECT * FROM addfinance_case WHERE addfinance_case_id = #{id}
+    </select>
+
+
+</mapper>

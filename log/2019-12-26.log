@@ -1,0 +1,33 @@
+2019-12-26 09:30:19   INFO  [main][AbstractTestContextBootstrapper.java:308] - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.taxchina.autotest.crmnew.service.testcase.LoginCaseTest], using SpringBootContextLoader
+2019-12-26 09:30:19   INFO  [main][AbstractContextLoader.java:264] - Could not detect default resource locations for test class [com.taxchina.autotest.crmnew.service.testcase.LoginCaseTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-26 09:30:19   INFO  [main][AnnotationConfigContextLoaderUtils.java:83] - Could not detect default configuration classes for test class [com.taxchina.autotest.crmnew.service.testcase.LoginCaseTest]: LoginCaseTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-12-26 09:30:19   INFO  [main][SpringBootTestContextBootstrapper.java:235] - Found @SpringBootConfiguration com.taxchina.autotest.crmnew.CrmNewApplication for test class com.taxchina.autotest.crmnew.service.testcase.LoginCaseTest
+2019-12-26 09:30:19   INFO  [main][AbstractTestContextBootstrapper.java:177] - Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@609bcfb6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7d94beb9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@560348e6, org.springframework.test.context.event.EventPublishingTestExecutionListener@1df8b5b8]
+2019-12-26 09:30:19   INFO  [main][Log.java:12] - ----------   com.taxchina.autotest.crmnew.service.testcase.LoginCaseTest  测试用例执行开始    ----------------
+2019-12-26 09:30:20   INFO  [main][StartupInfoLogger.java:55] - Starting LoginCaseTest on DESKTOP-6R8ROTP with PID 16980 (D:\IdeaProjects\crm-new\target\classes started by admin in D:\IdeaProjects\crm-new)
+2019-12-26 09:30:20   INFO  [main][SpringApplication.java:651] - No active profile set, falling back to default profiles: default
+2019-12-26 09:30:22   INFO  [main][StartupInfoLogger.java:61] - Started LoginCaseTest in 2.723 seconds (JVM running for 6.35)
+2019-12-26 09:30:23   INFO  [main][HikariDataSource.java:110] - HikariPool-1 - Starting...
+2019-12-26 09:30:23   INFO  [main][HikariDataSource.java:123] - HikariPool-1 - Start completed.
+2019-12-26 09:30:23   INFO  [main][Log.java:20] - 新增登录用例id:515
+2019-12-26 09:30:23   INFO  [main][Log.java:20] - 登录用例编号：515  登录名：xiaoshou6  密码：123456  预期结果：{"msg":"密码输入错误5次，帐户锁定10分钟","code":500}
+2019-12-26 09:30:24   INFO  [main][Log.java:20] - 登录结果保存成功
+2019-12-26 09:30:24   INFO  [main][Log.java:20] - 预期结果：{"msg":"密码输入错误5次，帐户锁定10分钟","code":500}
+2019-12-26 09:30:24   INFO  [main][Log.java:16] - ----------   com.taxchina.autotest.crmnew.service.testcase.LoginCaseTest  测试用例执行结束    ----------------
+2019-12-26 17:25:03   INFO  [main][AbstractTestContextBootstrapper.java:308] - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.taxchina.autotest.crmnew.service.testcase.LoginCaseTest], using SpringBootContextLoader
+2019-12-26 17:25:03   INFO  [main][AbstractContextLoader.java:264] - Could not detect default resource locations for test class [com.taxchina.autotest.crmnew.service.testcase.LoginCaseTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-26 17:25:03   INFO  [main][AnnotationConfigContextLoaderUtils.java:83] - Could not detect default configuration classes for test class [com.taxchina.autotest.crmnew.service.testcase.LoginCaseTest]: LoginCaseTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-12-26 17:25:03   INFO  [main][SpringBootTestContextBootstrapper.java:235] - Found @SpringBootConfiguration com.taxchina.autotest.crmnew.CrmNewApplication for test class com.taxchina.autotest.crmnew.service.testcase.LoginCaseTest
+2019-12-26 17:25:03   INFO  [main][AbstractTestContextBootstrapper.java:177] - Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@72ef8d15, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6aa8e115, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5e21e98f, org.springframework.test.context.event.EventPublishingTestExecutionListener@51a9ad5e]
+2019-12-26 17:25:03   INFO  [main][Log.java:12] - ----------   com.taxchina.autotest.crmnew.service.testcase.LoginCaseTest  测试用例执行开始    ----------------
+2019-12-26 17:25:03   INFO  [main][StartupInfoLogger.java:55] - Starting LoginCaseTest on DESKTOP-6R8ROTP with PID 17516 (D:\IdeaProjects\crm-new\target\classes started by admin in D:\IdeaProjects\crm-new)
+2019-12-26 17:25:03   INFO  [main][SpringApplication.java:651] - No active profile set, falling back to default profiles: default
+2019-12-26 17:25:04   INFO  [main][StartupInfoLogger.java:61] - Started LoginCaseTest in 1.572 seconds (JVM running for 3.714)
+2019-12-26 17:25:05   INFO  [main][HikariDataSource.java:110] - HikariPool-1 - Starting...
+2019-12-26 17:25:06   INFO  [main][HikariDataSource.java:123] - HikariPool-1 - Start completed.
+2019-12-26 17:25:06   INFO  [main][Log.java:20] - 新增登录用例id:516
+2019-12-26 17:25:06   INFO  [main][Log.java:20] - 登录用例编号：516  登录名：xiaoshou6  密码：123456  预期结果：{"msg":"密码输入错误5次，帐户锁定10分钟","code":500}
+2019-12-26 17:25:06   INFO  [main][Log.java:20] - 登录结果保存成功
+2019-12-26 17:25:06   INFO  [main][Log.java:20] - 预期结果：{"msg":"密码输入错误5次，帐户锁定10分钟","code":500}
+2019-12-26 17:25:06   INFO  [main][Log.java:16] - ----------   com.taxchina.autotest.crmnew.service.testcase.LoginCaseTest  测试用例执行结束    ----------------
+2019-12-26 17:25:06   INFO  [SpringContextShutdownHook][HikariDataSource.java:350] - HikariPool-1 - Shutdown initiated...

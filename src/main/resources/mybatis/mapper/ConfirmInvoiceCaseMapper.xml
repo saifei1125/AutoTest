@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taxchina.autotest.crmnew.dao.mapper.ConfirmInvoiceCaseMapper">
+
+
+    <insert id="setConfirmInvoiceCase" parameterType="com.taxchina.autotest.crmnew.dao.entity.ConfirmInvoiceCase">
+        <selectKey  keyProperty="caseId" order="AFTER" resultType="java.lang.Integer">
+            select last_insert_id()
+        </selectKey>
+        INSERT INTO confirminvoice_case (invoice_no,invoice_id,invoice_amount,confirm_remark,reject_reason,invoice_tax_rate,invoice_tax_amount,invoice_no_tax_amount,invoice_received_payment_flag)
+        VALUES (#{invoiceNo},#{invoiceId},#{invoiceAmount},#{confirmRemark},#{rejectReason},#{invoiceTaxRate},#{invoiceTaxAmount},#{invoiceNoTaxAmount},#{invoiceReceivedPaymentFlag})
+    </insert>
+
+    <resultMap id="ConfirmInvoiceMap" type="com.taxchina.autotest.crmnew.dao.entity.ConfirmInvoiceCase">
+        <id property="invoiceNo" column="invoice_no"></id>
+        <id property="invoiceId" column="invoice_id"></id>
+        <id property="invoiceAmount" column="invoice_amount"></id>
+        <id property="confirmRemark" column="confirm_remark"></id>
+        <id property="rejectReason" column="reject_reason"></id>
+        <id property="invoiceTaxRate" column="invoice_tax_rate"></id>
+        <id property="invoiceTaxAmount" column="invoice_tax_amount"></id>
+        <id property="invoiceNoTaxAmount" column="invoice_no_tax_amount"></id>
+        <id property="invoiceReceivedPaymentFlag" column="invoice_received_payment_flag"></id>
+    </resultMap>
+    <!-- 查询用例 -->
+    <select id="getConfirmInvoiceCaseById" resultMap="ConfirmInvoiceMap" parameterType="int">
+        SELECT * FROM confirminvoice_case WHERE confirminvoice_case_id = #{id}
+    </select>
+
+
+</mapper>

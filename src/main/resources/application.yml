@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/auto_test1?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    username: root
+    password: 123
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.taxchina.autotest.crmnew.dao.entity
+#  config-location: classpath:mybatis/mybatis-config.xml
+
+
+logging:
+  config: classpath:log4j2.xml

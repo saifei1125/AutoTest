@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taxchina.autotest.crmnew.dao.mapper.AddInvoiceCaseMapper">
+
+
+    <insert id="setAddInvoiceCase" parameterType="com.taxchina.autotest.crmnew.dao.entity.AddInvoiceCase">
+
+        <selectKey  keyProperty="caseId" order="AFTER" resultType="java.lang.Integer">
+            select last_insert_id()
+        </selectKey>
+
+        INSERT INTO addinvoice_case (invoice_no,contract_no,customer_id,customer_name,
+        invoice_type,invoice_project,cust_type,invoice_label,invoice_title,apply_date,invoice_date,apply_amount,
+        apply_user_name,tin,opening_bank,opening_bank_account,business_address,business_tel,
+        siute_type,arrival_money_flag,addinvoice_expect)
+        VALUES (#{invoiceNo},#{contractNo},#{customerId},#{customerName},#{invoiceType},
+        #{invoiceProject},#{custType},#{invoiceLabel},#{invoiceTitle},#{applyDate},#{invoiceDate},#{applyAmount},
+        #{applyUserame},#{tin},#{openingBank},#{openingBankAccount},#{businessAddress},
+        #{businessTel},#{siuteType},#{arrivalMoneyFlag},#{addinvoiceExpect})
+
+    </insert>
+
+    <resultMap id="AddInvoiceCaseMap" type="com.taxchina.autotest.crmnew.dao.entity.AddInvoiceCase">
+        <id property="caseId" column="addinvoice_case_id"></id>
+        <id property="invoiceNo" column="invoice_no"></id>
+        <id property="contractNo" column="contract_no"></id>
+        <id property="customerId" column="customer_id"></id>
+        <id property="customerNo" column="customer_no"></id>
+        <id property="customerName" column="customer_name"></id>
+        <id property="invoiceType" column="invoice_type"></id>
+        <id property="invoiceProject" column="invoice_project"></id>
+        <id property="custType" column="cust_type"></id>
+        <id property="invoiceLabel" column="invoice_label"></id>
+        <id property="invoiceTitle" column="invoice_title"></id>
+        <id property="applyDate" column="apply_date"></id>
+        <id property="invoiceDate" column="invoice_date"></id>
+        <id property="applyAmount" column="apply_amount"></id>
+        <id property="applyUserame" column="apply_user_name"></id>
+        <id property="tin" column="tin"></id>
+        <id property="openingBank" column="opening_bank"></id>
+        <id property="openingBankAccount" column="opening_bank_account"></id>
+        <id property="businessAddress" column="business_address"></id>
+        <id property="businessTel" column="business_tel"></id>
+        <id property="siuteType" column="siute_type"></id>
+        <id property="arrivalMoneyFlag" column="arrival_money_flag"></id>
+        <id property="addinvoiceExpect" column="addinvoice_expect"></id>
+    </resultMap>
+    <!-- 查询用例 -->
+    <select id="getAddInvoiceCaseById" resultMap="AddInvoiceCaseMap" parameterType="int">
+        SELECT * FROM addinvoice_case WHERE addinvoice_case_id = #{id}
+    </select>
+
+
+</mapper>

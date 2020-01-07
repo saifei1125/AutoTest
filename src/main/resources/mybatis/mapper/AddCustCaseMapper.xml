@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taxchina.autotest.crmnew.dao.mapper.AddCustCaseMapper">
+
+    <insert id="setAddCustCase" parameterType="com.taxchina.autotest.crmnew.dao.entity.AddCustCase">
+
+        <selectKey  keyProperty="caseId" order="AFTER" resultType="java.lang.Integer">
+        select last_insert_id()
+        </selectKey>
+
+        INSERT INTO addcust_case (cust_name,reg_addr,cust_phone,cust_type,cust_implevel,cust_email,lib_id,lib_name,addcust_expect)
+        VALUES (#{custName},#{regAddr},#{custPhone},#{custType},#{custImplevel},#{custEmail},#{libId},#{libName},#{addcustExpect})
+
+    </insert>
+
+    <resultMap id="AddCustCaseMap" type="com.taxchina.autotest.crmnew.dao.entity.AddCustCase">
+        <id property="caseId" column="addcust_case_id"></id>
+        <id property="custName" column="cust_name"></id>
+        <id property="custId" column="cust_id"></id>
+        <id property="regAddr" column="reg_addr"></id>
+        <id property="custPhone" column="cust_phone"></id>
+        <id property="custType" column="cust_type"></id>
+        <id property="custImplevel" column="cust_implevel"></id>
+        <id property="custEmail" column="cust_email"></id>
+        <id property="libId" column="lib_id"></id>
+        <id property="libName" column="lib_name"></id>
+        <id property="addcustExpect" column="addcust_expect"></id>
+    </resultMap>
+    <!-- 查询用例 -->
+    <select id="getAddCustCaseById" resultMap="AddCustCaseMap" parameterType="int">
+        SELECT * FROM addcust_case WHERE addcust_case_id = #{id}
+    </select>
+
+
+</mapper>

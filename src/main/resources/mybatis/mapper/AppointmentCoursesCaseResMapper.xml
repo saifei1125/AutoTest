@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taxchina.autotest.crmnew.dao.mapper.AppointmentCoursesCaseResMapper">
+
+
+    <insert id="setAppointmentCoursesCaseRes" parameterType="com.taxchina.autotest.crmnew.dao.entity.AppointmentCoursesCaseRes">
+
+        <selectKey  keyProperty="caseId" order="AFTER" resultType="java.lang.Integer">
+            select last_insert_id()
+        </selectKey>
+
+        INSERT INTO appointmentcourses_case_res (appointmentcourses_case_id,invitation_code,appointmentcourses_result) VALUES (#{caseId},#{invitationCode},#{result})
+
+    </insert>
+
+
+
+
+</mapper>
