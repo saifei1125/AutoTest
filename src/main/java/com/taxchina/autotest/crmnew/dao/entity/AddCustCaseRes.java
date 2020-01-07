@@ -1,6 +1,6 @@
 package com.taxchina.autotest.crmnew.dao.entity;
-
 public class AddCustCaseRes {
+
     private int resId;
     private int caseId;
     private String result;
